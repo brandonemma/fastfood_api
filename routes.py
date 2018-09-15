@@ -6,13 +6,6 @@ import pickle
 app = Flask(__name__)
 api = Api(app)
 
-class OrderClass():
-    def __init__(self, orderId, name, price, picture):
-        self.orderId = orderId
-        self.name = name
-        self.price = price
-        self.picture = picture
-
 #orders dictionary memory storage
 orders = {}
 
