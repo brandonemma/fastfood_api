@@ -3,12 +3,19 @@ from flask_restful import reqparse, abort, Api, Resource
 import json
 import pickle
 
-
 app = Flask(__name__)
 api = Api(app)
 
 #orders dictionary memory storage
-orders = {}
+orders = {
+    "1":
+   {'orderId':1,
+    'name':'oranges',
+    'price':500,
+    'picture':'oranges.jpg',
+    'status':'new order'} 
+}
+
 
 def abort_if_order_doesnt_exist(order_id):
     if order_id not in orders:
