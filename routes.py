@@ -61,7 +61,7 @@ class order(Resource):
         pass
 
 
-# orderList
+# orders dictionary
 # shows a list of all ORDERS, and lets you POST to add new names
 class orderList(Resource):
     def get(self):
