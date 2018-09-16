@@ -6,4 +6,5 @@ itsdangerous==0.24
 Jinja2==2.10
 virtualenv==16.0.0
 Werkzeug==0.14.1
+gunicorn==19.9.0
 
