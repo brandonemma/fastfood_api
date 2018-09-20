@@ -45,20 +45,20 @@ class order(Resource):
     def get(self, order_id):
         abort_if_order_doesnt_exist(order_id)
         return orders[order_id]
-        pass
+        
 
     def delete(self, order_id):
         abort_if_order_doesnt_exist(order_id)
         del orders[order_id]
         return '', 204
-        pass
+        
 
     def put(self, order_id):
         order_item = orders[order_id]
         state = {'status': 'completed'}
         order_item.update(state)
         return order_item, 200
-        pass
+        
 
 
 # orders dictionary
@@ -89,3 +89,4 @@ api.add_resource(order, '/api/v1/users/ORDERS/<order_id>')
 
 if __name__ == '__main__':
     app.run(debug=True)
+  
