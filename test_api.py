@@ -10,10 +10,8 @@ class TestApi(unittest.TestCase):
     def setUp(self):
         self.app = app.test_client()
         self.app.testing = True
-        pass
+        
 
-    def tearDown(self):
-        pass
 
     def test_home_status_code(self):
         # sends HTTP GET request to the application
