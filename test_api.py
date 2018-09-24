@@ -37,7 +37,8 @@ class TestApi(unittest.TestCase):
                 'status': 'new order'}
 
         response = self.app.post(ORDERSLISTURL, item)
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, 201
+        self.assertEqual(response.json())
 
     def test_put_order_item(self):
         state = {'status': 'completed'}
