@@ -16,4 +16,4 @@ install:
 script:
 #- pytest --with-coverage --cover-package=app
 - pytest --cov=. --cov-report term-missing
-- pytest --cov=. --cov-report te
+
