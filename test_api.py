@@ -1,5 +1,7 @@
 import unittest
 from routes import app
+from urllib2 import urlopen
+import json
 
 ORDERSLISTURL = "/api/v1/users/ORDERS"
 ORDERURL = "/api/v1/users/ORDERS/1"
@@ -25,6 +27,13 @@ class TestApi(unittest.TestCase):
         response = self.app.get(ORDERSLISTURL)
         self.assertEqual(response.status_code, 200)
 
+
+    #def test_get_data(self):
+     #   response = self.app.get(ORDERSLISTURL)
+      #  r_data = response.data().decode('utf-8')
+       #     return json.loads(r_data)
+    
+
     def test_get_order_item(self):
         response = self.app.get(ORDERURL)
         self.assertEqual(response.status_code, 200)
@@ -44,6 +53,7 @@ class TestApi(unittest.TestCase):
         response = self.app.put(ORDERURL, state)
         self.assertEqual(response.status_code, 200)
 
+        
     def test_delete_order_item(self):
         response = self.app.delete(ORDERDELURL)
         self.assertEqual(response.status_code, 204)
