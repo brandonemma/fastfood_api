@@ -1,8 +1,8 @@
 import json
 import unittest
 
-from fast_food_api.models.orders import Order, OrderSchema
-from fast_food_api.routes import app
+from routes import app
+from models.orders import *
 
 ORDERSLISTURL = "/api/v1/users/ORDERS"
 ORDERURL = "/api/v1/users/ORDERS/1"
