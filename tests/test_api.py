@@ -1,5 +1,7 @@
 import json
 import unittest
+import urllib.request
+import urllib.parse
 
 from routes import app
 from models.orders import *
@@ -68,20 +70,20 @@ class TestApi(unittest.TestCase):
         results = ordersSchema.dump(orderCollection)
         self.assertEqual(data, results.data)
 
-    # def test_post_order_item(self):
-    #     item = {'orderId': "3",
-    #             'name': "bananas",
-    #             'price': 750,
-    #             'picture': "bananas.jpg",
-    #             'status': 'new order'}
-    #
-    #     response = self.app.post(ORDERSLISTURL, item)
-    #     self.assertEqual(response.status_code, 200)
+    def test_post_order_item(self):
+        item = {'orderId': "3",
+                'name': "bananas",
+                'price': 750,
+                'picture': "bananas.jpg",
+                'status': 'new order'}
 
-    # def test_put_order_item(self):
-    #     state = {'status': 'completed'}
-    #     response = self.app.put(ORDERURL, state)
-    #     self.assertEqual(response.status_code, 200)
+        response = self.app.post(ORDERSLISTURL, data=item)
+        self.assertEqual(response.status_code, 200)
+
+    def test_put_order_item(self):
+        state = {'status': 'completed'}
+        response = self.app.put(ORDERURL, data=state)
+        self.assertEqual(response.status_code, 200)
 
 
 if __name__ == "__main__":
