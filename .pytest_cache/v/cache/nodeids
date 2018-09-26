@@ -1,11 +1,1 @@
-[
-  "tests/test_api.py::TestApi::test_get_order_item_1_data", 
-  "tests/test_api.py::TestApi::test_get_order_item_2_data", 
-  "tests/test_api.py::TestApi::test_get_order_item_list", 
-  "tests/test_api.py::TestApi::test_get_order_item_status", 
-  "tests/test_api.py::TestApi::test_get_order_list", 
-  "tests/test_api.py::TestApi::test_home_status_code", 
-  "tests/test_api.py::TestApi::test_post_order_item", 
-  "tests/test_api.py::TestApi::test_put_order_item", 
-  "tests/test_order_delete.py::TestApi::test_delete_order_item"
-]
+[]

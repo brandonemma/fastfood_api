@@ -1,1 +1,4 @@
-{}
+{
+  "tests/test_api.py": true, 
+  "tests/test_order_delete.py": true
+}
