@@ -13,7 +13,6 @@ install:
   - easy_install distribute
   - pip install -r requirements.txt
   - pip install coveralls
-  - pip install flask-marshmallow
 # command to run tests
 script:
 #- pytest --with-coverage --cover-package=app
