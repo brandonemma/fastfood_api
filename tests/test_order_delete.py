@@ -1,6 +1,6 @@
 import unittest
 
-from routes import app
+from fast_food_api.routes import app
 
 ORDERDELURL = "/api/v1/users/ORDERS/2"
 

@@ -1,5 +1,5 @@
 {
   "test_api.py": true, 
-  "tests/test_api.py": true, 
-  "tests/test_order_delete.py": true
+  "tests/test_api.py::TestApi": true, 
+  "tests/test_order_delete.py::TestApi": true
 }

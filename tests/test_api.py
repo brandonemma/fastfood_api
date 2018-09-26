@@ -1,8 +1,8 @@
 import json
 import unittest
 
-from fast_food_api.models.orders import *
-from routes import app
+from fast_food_api.models.orders import Order, OrderSchema
+from fast_food_api.routes import app
 
 ORDERSLISTURL = "/api/v1/users/ORDERS"
 ORDERURL = "/api/v1/users/ORDERS/1"
@@ -31,24 +31,23 @@ class TestApi(unittest.TestCase):
         response = self.app.get(ORDERURL)
         self.assertEqual(response.status_code, 200)
 
-
     def test_get_order_item_1_data(self):
         response = self.app.get(ORDERURL)
         data = json.loads(response.data)
-        #create order schema
+        # create order schema
         order_schema = OrderSchema()
-        #order object
+        # order object
         order = Order('1', 'oranges', 500, 'oranges.png', 'new order')
-        #serialise order object
+        # serialise order object
         result = order_schema.dump(order)
-        #check whether the response data from request is equal to the serialised data
+        # check whether the response data from request is equal to the serialised data
         self.assertEqual(data, result.data)
 
     def test_get_order_item_2_data(self):
         response = self.app.get(ORDERURL2)
         data = json.loads(response.data)
         order_schema = OrderSchema()
-       # obj = order_schema.load(data)
+        # obj = order_schema.load(data)
         order = Order('2', 'peaches', 600, 'peaches.png', 'new order')
 
         result = order_schema.dump(order)
@@ -58,14 +57,14 @@ class TestApi(unittest.TestCase):
     def test_get_order_item_list(self):
         response = self.app.get(ORDERSLISTURL)
         data = json.loads(response.data)
-        #created objects
+        # created objects
         order = Order('1', 'oranges', 500, 'oranges.png', 'new order')
         order1 = Order('2', 'peaches', 600, 'peaches.png', 'new order')
-        #add objects to collection list
+        # add objects to collection list
         orderCollection = [order, order1]
-        #create schema for serialising collection of objects
+        # create schema for serialising collection of objects
         ordersSchema = OrderSchema(many=True)
-        #serialise list of order objects
+        # serialise list of order objects
         results = ordersSchema.dump(orderCollection)
         self.assertEqual(data, results.data)
 
