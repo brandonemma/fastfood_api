@@ -10,6 +10,8 @@ An online Food delivery application
 #### view app on heroku
 [HEROKU](https://fast-food-api-v2.herokuapp.com/api/v1/users/ORDERS).
 
+#### View UI 
+This is the link to fast-foods-fast UI hosted on [ghub pages](https://brandonemma.github.io/fast-foods-fast/index.html).
 
 #### Technology
 - Api is a flask application 
