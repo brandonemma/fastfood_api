@@ -11,15 +11,15 @@ An online Food delivery application
 [HEROKU](https://fast-food-api-v2.herokuapp.com/api/v1/users/ORDERS).
 
 
-# Technology
-Api is a flask app 
+#### Technology
+- Api is a flask application 
 
-## setup to run on local environment
+### setup to run on local environment
 To run in python version 3.6 
   - pip3.6 install -r requirements.txt
   - python3.6 routes.py
 
-## To run in python version 2.7
+### To run in python version 2.7
   - pip install -r requirements.txt
   - python routes.py
   
@@ -32,7 +32,7 @@ To run in python version 3.6
 |PUT   |/api/v1/users/ORDERS/<order_id>|Update the status of an order|          
 
 
-# Usage
+## Usage
 ### When you make a get request to /api/v1/users/ORDERS you will recieve a json response like below.
 ```
 [
@@ -54,7 +54,7 @@ To run in python version 3.6
  
 ```
 
-### To fetch a specific order with a unique order_Id of 1
+#### To fetch a specific order with a unique order_Id of 1
 make a get request to /api/v1/users/ORDERS/1 and this is the response you will get
 ```
 {
@@ -66,13 +66,13 @@ make a get request to /api/v1/users/ORDERS/1 and this is the response you will g
 }
 ```
 
-### To Update an order_item status you are required to enter:
+#### To Update an order_item status you are required to enter:
 Make a put request to /api/v1/users/ORDERS/<order_id>
 With a status field.
 
 
 
-### Rest Api Testing tools
+#### Rest Api Testing tools
 ```
 Postman 
 Insomnia
@@ -80,7 +80,7 @@ Pau
 Advanced Rest Client(ARC)
 ```
 
-### Tests
+#### Tests
 pytest 
 
 
