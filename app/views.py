@@ -98,8 +98,6 @@ class orderList(Resource):
         order_item = Order(orderId, name, price, 'new order')
 
         orderCollection.append(order_item)
-        #ordersSchema = OrderSchema(many=True)
-        #results = ordersSchema.dump(orderCollection)
         if len(orderCollection) == 3:
             return {'message':'order item added'}
         else:

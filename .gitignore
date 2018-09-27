@@ -9,3 +9,7 @@ __pycache__
 
 tests/__pycache__
 tests/.pytest_cache
+tests/*.pyc
+app/__pycache__
+app/.pytest_cache
+app/*.pyc
