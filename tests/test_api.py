@@ -1,7 +1,7 @@
 import json
 import unittest
-import urllib.request
-import urllib.parse
+#import urllib.request
+#import urllib.parse
 
 from routes import app
 from models.orders import *
