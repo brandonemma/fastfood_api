@@ -38,7 +38,7 @@ class TestApi(unittest.TestCase):
         # create order schema
         order_schema = OrderSchema()
         # order object
-        order = Order('1', 'oranges', 500, 'oranges.png', 'new order')
+        order = Order('1', 'oranges', 500, 'new order')
         # serialise order object
         result = order_schema.dump(order)
         # check whether the response data from request is equal to the serialised data
@@ -49,7 +49,7 @@ class TestApi(unittest.TestCase):
         data = json.loads(response.data)
         order_schema = OrderSchema()
         # obj = order_schema.load(data)
-        order = Order('2', 'peaches', 600, 'peaches.png', 'new order')
+        order = Order('2', 'peaches', 600, 'new order')
 
         result = order_schema.dump(order)
 
@@ -59,8 +59,8 @@ class TestApi(unittest.TestCase):
         response = self.app.get(ORDERSLISTURL)
         data = json.loads(response.data)
         # created objects
-        order = Order('1', 'oranges', 500, 'oranges.png', 'new order')
-        order1 = Order('2', 'peaches', 600, 'peaches.png', 'new order')
+        order = Order('1', 'oranges', 500, 'new order')
+        order1 = Order('2', 'peaches', 600, 'new order')
         # add objects to collection list
         orderCollection = [order, order1]
         # create schema for serialising collection of objects
@@ -69,21 +69,28 @@ class TestApi(unittest.TestCase):
         results = ordersSchema.dump(orderCollection)
         self.assertEqual(data, results.data)
 
-    def test_post_order_item(self):
+  
+        
+
+    def test_post_order_item_data_response(self):
         item = {'orderId': "3",
                 'name': "bananas",
                 'price': 750,
-                'picture': "bananas.jpg",
                 'status': 'new order'}
-
+                
+        response_data = 'order item added'
         response = self.app.post(ORDERSLISTURL, data=item)
+        data = json.loads(response.data)
         self.assertEqual(response.status_code, 200)
+        self.assertEqual(data['message'],response_data)
+
+
 
     def test_put_order_item(self):
         state = {'status': 'completed'}
         response = self.app.put(ORDERURL, data=state)
         self.assertEqual(response.status_code, 200)
-
+ 
 
 if __name__ == "__main__":
     unittest.main()

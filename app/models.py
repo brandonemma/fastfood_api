@@ -2,11 +2,10 @@ from flask_marshmallow import Schema
 
 #order class for representing order model
 class Order(object):
-    def __init__(self, order_id, name, price, picture, status):
+    def __init__(self, order_id, name, price, status):
         self.orderId = order_id
         self.name = name
         self.price = price
-        self.picture = picture
         self.status = status
 
     def get_order_id(self):
@@ -25,5 +24,4 @@ class OrderSchema(Schema):
         fields = ('orderId',
                   'name',
                   'price',
-                  'picture',
                   'status')
