@@ -1,6 +1,6 @@
 import unittest
 
-from routes import app
+from app.views import app
 ORDERDELURL = "/api/v1/users/ORDERS/2"
 
 

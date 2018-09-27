@@ -1,10 +1,9 @@
 import json
 import unittest
-#import urllib.request
-#import urllib.parse
 
-from routes import app
-from models.orders import *
+
+from app.views import app
+from app.models import *
 
 ORDERSLISTURL = "/api/v1/users/ORDERS"
 ORDERURL = "/api/v1/users/ORDERS/1"

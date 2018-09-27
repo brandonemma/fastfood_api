@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
 from flask_restful import reqparse, abort, Api, Resource
 
-from models.orders import *
+from .models import *
 
 app = Flask(__name__)
 api = Api(app)
@@ -94,12 +94,10 @@ class orderList(Resource):
         ordersSchema = OrderSchema(many=True)
         results = ordersSchema.dump(orderCollection)
         return results
+        
 
 
 # Api resource routes
 
 api.add_resource(orderList, '/api/v1/users/ORDERS')
 api.add_resource(order, '/api/v1/users/ORDERS/<order_id>')
-
-if __name__ == '__main__':
-    app.run(debug=True)
