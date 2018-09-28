@@ -2,6 +2,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/brandonemma/fastfood_api/badge.svg?branch=develop)](https://coveralls.io/github/brandonemma/fastfood_api?branch=develop)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/6e434d0adcffe3f1dbc8/maintainability)](https://codeclimate.com/github/brandonemma/fastfood_api/maintainability)
+
 
 
 # fastfood_api
