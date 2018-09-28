@@ -60,10 +60,10 @@ class order(Resource):
         # del orders[order_id]
         orderCollection.remove(o)
 
-        if len(orderCollection) == 2:
-            return {'message':'order item deleted'}
-        else:
+        if self.find_order(order_id):
             return {'message':'delete failed'}
+        else:
+            return {'message':'order item deleted'}
        
 
 
@@ -85,7 +85,8 @@ class order(Resource):
 #endpoint for adding an order item to the collection and showing all order items in the collection
 class orderList(Resource):
     def get(self):
-        return jsonify(results.data)
+        results = ordersSchema.dump(orderCollection)
+        return results.data
 
     def post(self):
         args = parser.parse_args()
@@ -98,10 +99,18 @@ class orderList(Resource):
         order_item = Order(orderId, name, price, 'new order')
 
         orderCollection.append(order_item)
-        if len(orderCollection) == 3:
+        if self.find_order(orderId):
             return {'message':'order item added'}
         else:
-            return {'message':len(orderCollection) }
+            return {'message':'failed adding order' }
+
+    def find_order(self, order_id):
+        f_order = ''
+        for order_item in orderCollection:
+            if order_item.get_order_id() == order_id:
+                f_order = order_item
+                break
+        return f_order
          
         
 
