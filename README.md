@@ -41,14 +41,12 @@ To run in python version 3.6
     {
         "name": "oranges",
         "orderId": "1",
-        "picture": "oranges.png",
         "price": 500,
         "status": "new order"
     },
     {
         "name": "peaches",
         "orderId": "2",
-        "picture": "peaches.png",
         "price": 600,
         "status": "new order"
     }
@@ -62,7 +60,6 @@ make a get request to /api/v1/users/ORDERS/1 and this is the response you will g
 {
     "name": "oranges",
     "orderId": "1",
-    "picture": "oranges.png",
     "price": 500,
     "status": "new order"
 }
