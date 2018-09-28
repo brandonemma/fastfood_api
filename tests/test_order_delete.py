@@ -14,7 +14,6 @@ class TestApi(unittest.TestCase):
         response = self.app.delete(ORDERDELURL)
         response_data = 'order item deleted'
         data = json.loads(response.data)
-        #self.assertEqual(response.status_code, 204)
         self.assertEqual(data['message'],response_data)
 
 if __name__ == "__main__":
